@@ -25,15 +25,16 @@ export const routes = [
     path: buildRoutePath('/users'),
     handler: (req, res) => {
       const { name, email } = req.body
+      const id = randomUUID()
 
       const user = {
-        id: randomUUID(),
+        id,
         name,
         email
       }
       database.insert('users', user)
 
-      return res.writeHead(201).end()
+      return res.writeHead(201).end(JSON.stringify({ id }))
     }
   },
   {
@@ -54,7 +55,7 @@ export const routes = [
 
       database.update('users', id, { name, email })
 
-      return res.writeHead(204).end()
+      return res.writeHead(204).end(JSON.stringify({ id }))
     }
   }
 ]

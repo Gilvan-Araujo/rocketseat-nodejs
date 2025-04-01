@@ -1,0 +1,133 @@
+type: collection.insomnia.rest/5.0
+name: Node.JS Rocketseat
+meta:
+  id: wrk_9aa83f18be2245478b86beaa80689b16
+  created: 1743523083578
+  modified: 1743523083578
+collection:
+  - name: Module 01 - Users
+    meta:
+      id: fld_e151038530d2415cb101b63de9447d6a
+      created: 1743523209103
+      modified: 1743523323168
+      sortKey: -1743523209103
+    children:
+      - url: "{{ _.BASE_URL }}/users"
+        name: Get Users
+        meta:
+          id: req_41e8af4dd3b64e05902f1bdaec2a834c
+          created: 1743523102098
+          modified: 1743523257288
+          isPrivate: false
+          sortKey: -1743523213482
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/users"
+        name: Create User
+        meta:
+          id: req_4d0f201cf8ae4087bf46ceb11da2c6bf
+          created: 1743523332340
+          modified: 1743523357024
+          isPrivate: false
+          sortKey: -1734629031118.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "John Doe",
+            	"email": "john@doe.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/users/{% response 'body',
+          'req_4d0f201cf8ae4087bf46ceb11da2c6bf', 'b64::JC5pZA==::46b',
+          'always', 60 %}"
+        name: Delete User
+        meta:
+          id: req_66865eee7b1649b9b93390a2860a5f6e
+          created: 1743523386107
+          modified: 1743523736890
+          isPrivate: false
+          sortKey: -1730181939936.75
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/users/{% response 'body',
+          'req_4d0f201cf8ae4087bf46ceb11da2c6bf', 'b64::JC5pZA==::46b',
+          'always', 60 %}"
+        name: Update User
+        meta:
+          id: req_aedb11a55a9e49bcb2e4d2c906e558d1
+          created: 1743523658489
+          modified: 1743523684411
+          isPrivate: false
+          sortKey: -1727958394345.875
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Jane Doe",
+            	"email": "jane@doe.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      BASE_URL: http://localhost:3333
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083580
+    modified: 1743523083580
+environments:
+  name: Local Environment
+  meta:
+    id: env_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083579
+    modified: 1743523269143
+    isPrivate: false
+  data:
+    BASE_URL: http://localhost:3333
