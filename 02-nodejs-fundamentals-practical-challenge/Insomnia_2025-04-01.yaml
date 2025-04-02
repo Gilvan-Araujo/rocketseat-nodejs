@@ -1,0 +1,267 @@
+type: collection.insomnia.rest/5.0
+name: Node.JS Rocketseat
+meta:
+  id: wrk_9aa83f18be2245478b86beaa80689b16
+  created: 1743523083578
+  modified: 1743523083578
+collection:
+  - name: Module 01 - Users
+    meta:
+      id: fld_e151038530d2415cb101b63de9447d6a
+      created: 1743523209103
+      modified: 1743523323168
+      sortKey: -1743523209103
+    environment:
+      BASE_URL: http://localhost:3333
+  - name: Module 01 - Tasks
+    meta:
+      id: fld_f9f1ce44721e4dc7874f756c32d07207
+      created: 1743524273569
+      modified: 1743524273569
+      sortKey: -1743523209053
+    children:
+      - name: Requests with Error
+        meta:
+          id: fld_55bedc84e139466eaff25f74c60af084
+          created: 1743525813056
+          modified: 1743525813056
+          sortKey: -1743525813056
+        children:
+          - url: "{{ _.BASE_URL }}/tasks/123"
+            name: Update Task (error)
+            meta:
+              id: req_0b1363f406fe4dcc97402481fc6c46b3
+              created: 1743525194422
+              modified: 1743525826644
+              isPrivate: false
+              sortKey: -1743525820873
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"title": "Another title",
+                	"description": "Another description"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/tasks"
+            name: Create Task (error)
+            meta:
+              id: req_33d2c99453b64d57990d59710fba6e12
+              created: 1743525359147
+              modified: 1743525821132
+              isPrivate: false
+              sortKey: -1743525821073
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"title": "Example title"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/tasks/123"
+            name: Delete Task (error)
+            meta:
+              id: req_0f70ce1459b440ce8737c6bf65ec4e29
+              created: 1743525583459
+              modified: 1743525823818
+              isPrivate: false
+              sortKey: -1743525820973
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/tasks/123/complete"
+            name: Complete Task (error)
+            meta:
+              id: req_3167f788aa1f4075acb2aac93ff3d9d2
+              created: 1743525765678
+              modified: 1743525830346
+              isPrivate: false
+              sortKey: -1743525820773
+            method: PATCH
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: "{{ _.BASE_URL }}/tasks"
+        name: Get Tasks
+        meta:
+          id: req_609e724f28b141909d97d38d9f9d0152
+          created: 1743524273569
+          modified: 1743524290600
+          isPrivate: false
+          sortKey: -1743523213482
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/tasks/{% response 'body',
+          'req_4a1db3fa72094ca69cbd6a56211e67f8', 'b64::JC5pZA==::46b',
+          'always', 60 %}"
+        name: Delete Task
+        meta:
+          id: req_23d9e22c86cf415ca8738b4895615a73
+          created: 1743524273570
+          modified: 1743524662552
+          isPrivate: false
+          sortKey: -1730181939936.75
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/tasks"
+        name: Create Task
+        meta:
+          id: req_4a1db3fa72094ca69cbd6a56211e67f8
+          created: 1743524273570
+          modified: 1743524324174
+          isPrivate: false
+          sortKey: -1734629031118.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Example title",
+              "description": "Example description"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/tasks/{% response 'body',
+          'req_4a1db3fa72094ca69cbd6a56211e67f8', 'b64::JC5pZA==::46b',
+          'always', 60 %}"
+        name: Update Task
+        meta:
+          id: req_558d9ab9bbc141ef9524e43daa979e4c
+          created: 1743524273571
+          modified: 1743525188373
+          isPrivate: false
+          sortKey: -1727958394345.875
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Another title",
+            	"description": "Another description"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/tasks/{% response 'body',
+          'req_4a1db3fa72094ca69cbd6a56211e67f8', 'b64::JC5pZA==::46b',
+          'always', 60 %}/complete"
+        name: Complete Task
+        meta:
+          id: req_ebe02cbc6e454eecaf01577a3db5fcba
+          created: 1743525012358
+          modified: 1743525045187
+          isPrivate: false
+          sortKey: -1726290735152.7188
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      BASE_URL: http://localhost:3333
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083580
+    modified: 1743523083580
+environments:
+  name: Local Environment
+  meta:
+    id: env_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083579
+    modified: 1743523269143
+    isPrivate: false
+  data:
+    BASE_URL: http://localhost:3333
