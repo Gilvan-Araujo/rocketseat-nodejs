@@ -1,0 +1,185 @@
+type: collection.insomnia.rest/5.0
+name: Node.JS Rocketseat
+meta:
+  id: wrk_9aa83f18be2245478b86beaa80689b16
+  created: 1743523083578
+  modified: 1743523083578
+collection:
+  - name: Module 01 - Users
+    meta:
+      id: fld_e151038530d2415cb101b63de9447d6a
+      created: 1743523209103
+      modified: 1744107654095
+      sortKey: -1743523209103
+    environment:
+      BASE_URL: http://localhost:3333
+  - name: Module 01 - Tasks
+    meta:
+      id: fld_f9f1ce44721e4dc7874f756c32d07207
+      created: 1743524273569
+      modified: 1743524273569
+      sortKey: -1743523209053
+    children:
+      - name: Requests with Error
+        meta:
+          id: fld_55bedc84e139466eaff25f74c60af084
+          created: 1743525813056
+          modified: 1743525813056
+          sortKey: -1743525813056
+    environment:
+      BASE_URL: http://localhost:3333
+  - name: Module 02 - Transactions
+    meta:
+      id: fld_cd2519e4d56d4110946a25275ccdff21
+      created: 1743676337604
+      modified: 1743676383830
+      sortKey: -1743523209203
+    children:
+      - url: "{{ _.BASE_URL }}/transactions"
+        name: Create Transaction
+        meta:
+          id: req_197b53aa03b04d148a19ff4962d61fef
+          created: 1743676551558
+          modified: 1743676613978
+          isPrivate: false
+          sortKey: -1743676553581
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Example title",
+            	"amount": 2000,
+            	"type": "credit"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/transactions"
+        name: List Transactions
+        meta:
+          id: req_88df0a08905546c0b0c23d262c58e333
+          created: 1743760200147
+          modified: 1743760267962
+          isPrivate: false
+          sortKey: -1743676553681
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Example title",
+            	"amount": 2000,
+            	"type": "credit"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/transactions/{% response 'body',
+          'req_88df0a08905546c0b0c23d262c58e333', 'b64::JC5bMF0uaWQ=::46b',
+          'no-history', 60 %}"
+        name: Get Specific Transaction
+        meta:
+          id: req_9f8d86c22e654318a319467381782c83
+          created: 1743760275655
+          modified: 1743760405293
+          isPrivate: false
+          sortKey: -1743676553631
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Example title",
+            	"amount": 2000,
+            	"type": "credit"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/transactions/summary"
+        name: Get Summary
+        meta:
+          id: req_9c8292cf280445a890223f4f5b8e5278
+          created: 1743760518466
+          modified: 1743760522960
+          isPrivate: false
+          sortKey: -1743676553606
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Example title",
+            	"amount": 2000,
+            	"type": "credit"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083580
+    modified: 1743960469024
+  cookies:
+    - key: sessionId
+      value: dc40f8f6-6c9f-41f4-a339-46436425c379
+      maxAge: 604800
+      domain: localhost
+      path: /
+      hostOnly: true
+      creation: 2025-04-06T17:27:49.023Z
+      lastAccessed: 2025-04-06T17:27:49.023Z
+      sameSite: lax
+      id: 8f21d5a2-508c-4742-89cd-f961265079c8
+environments:
+  name: Local Environment
+  meta:
+    id: env_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083579
+    modified: 1743523269143
+    isPrivate: false
+  data:
+    BASE_URL: http://localhost:3333
