@@ -1,0 +1,243 @@
+type: collection.insomnia.rest/5.0
+name: Node.JS Rocketseat
+meta:
+  id: wrk_9aa83f18be2245478b86beaa80689b16
+  created: 1743523083578
+  modified: 1743523083578
+collection:
+  - name: Module 01 - Users
+    meta:
+      id: fld_e151038530d2415cb101b63de9447d6a
+      created: 1743523209103
+      modified: 1744107654095
+      sortKey: -1743523209103
+    environment:
+      BASE_URL: http://localhost:3333
+  - name: Module 01 - Tasks
+    meta:
+      id: fld_f9f1ce44721e4dc7874f756c32d07207
+      created: 1743524273569
+      modified: 1743524273569
+      sortKey: -1743523209053
+    children:
+      - name: Requests with Error
+        meta:
+          id: fld_55bedc84e139466eaff25f74c60af084
+          created: 1743525813056
+          modified: 1743525813056
+          sortKey: -1743525813056
+    environment:
+      BASE_URL: http://localhost:3333
+  - name: Module 02 - Transactions
+    meta:
+      id: fld_cd2519e4d56d4110946a25275ccdff21
+      created: 1743676337604
+      modified: 1743676383830
+      sortKey: -1743523209203
+  - name: Module 02 - Diet
+    meta:
+      id: fld_d5bf346303eb4bc3b9a1fd5114dc26b5
+      created: 1744108181510
+      modified: 1744108184155
+      sortKey: -1743523209303
+    children:
+      - url: "{{ _.BASE_URL }}/users"
+        name: Create User
+        meta:
+          id: req_d91489a1205f41a89eb24ac877cf2583
+          created: 1744108181511
+          modified: 1744108284071
+          isPrivate: false
+          sortKey: -1743676553681
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "John Doe"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/meals"
+        name: Create Meal
+        meta:
+          id: req_bbd5a4db23ae4e1394ecfb5935ad3937
+          created: 1744108181512
+          modified: 1744109115656
+          isPrivate: false
+          sortKey: -1743676553631
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Example meal",
+            	"description": "Example meal description",
+            	"isDiet": true,
+            	"date": "{% faker 'randomDateRecent' %}"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/meals/{% response 'body',
+          'req_bbd5a4db23ae4e1394ecfb5935ad3937', 'b64::JC5tZWFsSWQ=::46b',
+          'always', 60 %}"
+        name: Update Meal
+        meta:
+          id: req_35a8e0d4d3ac4c368ec74dcddc9d77be
+          created: 1744195725284
+          modified: 1744196455517
+          isPrivate: false
+          sortKey: -1743676553618.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "New title",
+            	"date": "{% faker 'randomDateRecent' %}"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/meals/{% response 'body',
+          'req_bbd5a4db23ae4e1394ecfb5935ad3937', 'b64::JC5tZWFsSWQ=::46b',
+          'always', 60 %}"
+        name: Delete Meal
+        meta:
+          id: req_be7af586ee504f07b750d016e5786a2d
+          created: 1744196534124
+          modified: 1744196569650
+          isPrivate: false
+          sortKey: -1743676553612.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/meals"
+        name: List Meals
+        meta:
+          id: req_8b37df1a297646ec801053a78497c40f
+          created: 1744196659380
+          modified: 1744198172146
+          isPrivate: false
+          sortKey: -1743676553609.125
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/meals/{% response 'body',
+          'req_bbd5a4db23ae4e1394ecfb5935ad3937', 'b64::JC5tZWFsSWQ=::46b',
+          'always', 60 %}"
+        name: List Specific Meal
+        meta:
+          id: req_859c5935739a48b6b1078c3a5133e4ad
+          created: 1744196868735
+          modified: 1744196873305
+          isPrivate: false
+          sortKey: -1743676553607.5625
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/users/metrics"
+        name: Get User Metrics
+        meta:
+          id: req_c6a012711c8c4315ad0340b827c69755
+          created: 1744197780763
+          modified: 1744197789474
+          isPrivate: false
+          sortKey: -1743676553656
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083580
+    modified: 1744108384855
+  cookies:
+    - key: userId
+      value: e2be254d-1ef1-4178-8078-20f86d59c6d7
+      maxAge: 604800
+      domain: localhost
+      path: /
+      hostOnly: true
+      creation: 2025-04-08T10:33:04.855Z
+      lastAccessed: 2025-04-08T10:33:04.855Z
+      sameSite: lax
+      id: 19fd6a77-a326-4a63-9ea0-afb25e2fba69
+environments:
+  name: Local Environment
+  meta:
+    id: env_c7299a99cae97e96c393f47c94492c9853a4ef32
+    created: 1743523083579
+    modified: 1743523269143
+    isPrivate: false
+  data:
+    BASE_URL: http://localhost:3333
